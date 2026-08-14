@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   LIGHT THEME — HeroUI v3-aligned token values
+   Uses oklch() for accurate perceptual colour reproduction
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root,
+.light,
+[data-theme="light"] {
+  /* ── HeroUI Primitives (fixed) ── */
+  --white:    #ffffff;
+  --black:    #000000;
+  --snow:     #fafafa;
+  --eclipse:  #18181b;
+
+  /* ── Base ── */
+  --background:          oklch(0.985 0.001 286); /* near-white, not pure white */
+  --foreground:          oklch(0.14 0.006 286);  /* very dark zinc — not jet black */
+
+  /* ── Surface layers (HeroUI card hierarchy) ── */
+  --surface:             var(--white);
+  --surface-secondary:   oklch(0.965 0.003 286); /* ~#F3F3F4 — off-white */
+  --surface-tertiary:    oklch(0.945 0.003 286); /* slightly deeper */
+  --card:                var(--white);
+  --card-foreground:     oklch(0.14 0.006 286);
+  --overlay:             var(--white);
+  --overlay-foreground:  oklch(0.14 0.006 286);
+
+  /* ── Text tones ── */
+  --muted:               oklch(0.965 0.003 286);
+  --muted-foreground:    oklch(0.48 0.012 286); /* HeroUI zinc-500 — medium grey, not black */
+
+  /* ── Borders & Inputs ── */
+  --border:              oklch(0.898 0.006 286);  /* ~E4E4E7 — subtle zinc border */
+  --separator:           oklch(0.920 0.005 286);
+  --input:               var(--white);
+  --ring:                oklch(0.72 0.18 72);     /* amber focus ring */
+
+  /* ── Interactive ── */
+  --default:             oklch(0.940 0.003 286);  /* chip/badge default — light zinc */
+  --default-foreground:  oklch(0.20 0.006 286);   /* dark zinc, not black */
+  --primary:             oklch(0.14 0.006 286);
+  --primary-foreground:  var(--snow);
+  --secondary:           oklch(0.945 0.003 286);
+  --secondary-foreground:oklch(0.20 0.006 286);
+  --accent:              oklch(0.965 0.003 286);
+  --accent-foreground:   oklch(0.14 0.006 286);
+  --popover:             var(--white);
+  --popover-foreground:  oklch(0.20 0.006 286);
+  --destructive:         oklch(0.6532 0.2328 25.74);
+
+  /* ── Amber signal — actual amber in light mode ── */
+  --signal:              oklch(0.70 0.185 59);    /* amber-600 */
+  --signal-soft:         oklch(0.78 0.165 72);    /* amber-500 */
+  --signal-dim:          oklch(0.64 0.17 55);     /* amber-700 */
+  --signal-amber:        oklch(0.70 0.185 59);
+
+  /* Amber scale — real amber values, not black */
+  --amber-200:           oklch(0.93 0.10 85);
+  --amber-300:           oklch(0.87 0.15 78);
+  --amber-400:           oklch(0.80 0.17 75);
+  --amber-500:           oklch(0.72 0.18 67);
+  --amber-600:           oklch(0.66 0.17 59);
+
+  /* ── Verify / success ── */
+  --verify:              oklch(0.66 0.17 59); /* dark amber — consistent with palette */
+  --verify-soft:         oklch(0.87 0.15 78);
+
+  /* ── Severity ── */
+  --sev-critical:        oklch(0.6532 0.2328 25.74);
+  --sev-high:            oklch(0.72 0.20  55.0);
+  --sev-medium:          oklch(0.72 0.18  67.0);
+  --sev-low:             oklch(0.55 0.05 260.0);
+  --sev-ok:              oklch(0.66 0.17  59.0);
+
+  /* ── Radius ── */
+  --radius:              0.75rem;
+}
