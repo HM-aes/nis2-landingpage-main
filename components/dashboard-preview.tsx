@@ -72,8 +72,7 @@ export default function DashboardPreview() {
               </div>
               <div className="absolute top-4 right-6">
                 <Chip 
-                  size="sm" 
-                  variant="flat"
+                  size="sm"
                   className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 h-auto py-1.5 font-medium text-xs flex items-center gap-1.5"
                 >
                   <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -189,7 +188,6 @@ export default function DashboardPreview() {
                     <div key={stage} className="flex flex-col items-center gap-4 z-10 w-32">
                       <Chip
                         size="sm"
-                        variant="flat"
                         className={cn(
                           "px-2 py-1 h-auto font-mono text-[9px] font-bold uppercase tracking-wider border flex items-center gap-1.5",
                           i === 4 

@@ -4,15 +4,15 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Chip } from "@heroui/react";
 
-const SECTOR_CONFIG: Record<string, { color: "warning" | "success" | "primary" | "secondary" | "danger" | "default" }> = {
+const SECTOR_CONFIG: Record<string, { color: "warning" | "success" | "accent" | "danger" | "default" }> = {
   ENERGY: { color: "warning" },
   HEALTH: { color: "success" },
-  FINANCE: { color: "primary" },
-  TRANSPORT: { color: "secondary" },
+  FINANCE: { color: "accent" },
+  TRANSPORT: { color: "default" },
   "DIGITAL INFRASTRUCTURE": { color: "danger" },
   MANUFACTURING: { color: "warning" },
   FOOD: { color: "success" },
-  CHEMICALS: { color: "primary" },
+  CHEMICALS: { color: "accent" },
   "+ 10 MORE": { color: "default" },
 };
 
@@ -64,7 +64,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
           </span>
-          <Chip size="sm" color="warning" variant="flat" className="font-mono text-[10px] tracking-wide font-semibold px-1">
+          <Chip size="sm" color="warning" className="font-mono text-[10px] tracking-wide font-semibold px-1">
             EU DIRECTIVE 2022/2555 · IN FORCE ACROSS ALL MEMBER STATES
           </Chip>
         </motion.div>
@@ -99,7 +99,6 @@ export default function Hero() {
                 key={sector}
                 size="sm"
                 color={config.color}
-                variant="flat"
                 className="transition-all duration-200 hover:scale-105 font-sans text-xs uppercase font-semibold tracking-wide"
               >
                 {sector}
@@ -131,7 +130,7 @@ export default function Hero() {
         <motion.div {...settle(5, 10)} className="mt-10 flex flex-wrap items-center gap-2">
           {PIPELINE.map((step, i) => (
             <span key={step} className="flex items-center gap-2">
-              <Chip size="sm" variant="flat" color="warning" className="font-mono text-[10px] font-bold tracking-wide">
+              <Chip size="sm" color="warning" className="font-mono text-[10px] font-bold tracking-wide">
                 {step}
               </Chip>
               {i < PIPELINE.length - 1 && (

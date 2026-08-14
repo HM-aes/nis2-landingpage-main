@@ -46,8 +46,7 @@ export default function Technology() {
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="max-w-2xl">
           <Chip 
-            size="sm" 
-            variant="flat"
+            size="sm"
             className="bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
             <span className="size-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -102,8 +101,7 @@ export default function Technology() {
         <Reveal className="mt-8 flex flex-wrap items-center gap-3 rounded-2xl border border-foreground/10 bg-card px-6 py-5 font-mono text-xs text-muted-foreground backdrop-blur-md shadow-xl">
           <span className="text-muted-foreground font-bold uppercase tracking-wider">Pipeline</span>
           <Chip 
-            size="sm" 
-            variant="flat"
+            size="sm"
             className="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
             <span className="size-1.5 rounded-full bg-cyan-400 animate-pulse" />
@@ -111,8 +109,7 @@ export default function Technology() {
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
-            size="sm" 
-            variant="flat"
+            size="sm"
             className="bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
             <span className="size-1.5 rounded-full bg-indigo-400 animate-pulse" />
@@ -120,8 +117,7 @@ export default function Technology() {
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
-            size="sm" 
-            variant="flat"
+            size="sm"
             className="bg-violet-500/10 border border-violet-500/30 text-violet-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
             <span className="size-1.5 rounded-full bg-violet-400 animate-pulse" />
@@ -129,8 +125,7 @@ export default function Technology() {
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
-            size="sm" 
-            variant="flat"
+            size="sm"
             className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
             <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -138,8 +133,7 @@ export default function Technology() {
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
-            size="sm" 
-            variant="flat"
+            size="sm"
             className="bg-rose-500/10 border border-rose-500/30 text-rose-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
             <span className="size-1.5 rounded-full bg-rose-400 animate-pulse" />
