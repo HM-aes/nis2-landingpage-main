@@ -32,7 +32,11 @@ export default function FindingCard({
         <div className="flex items-start gap-3">
           <Chip
             size="sm"
-            className="rounded-md mt-0.5 border-none h-5 font-mono text-[11px] font-medium text-white px-1.5"
+            variant="flat"
+            startContent={
+              <span className="size-1.5 rounded-full bg-white animate-pulse" />
+            }
+            className="rounded-md mt-0.5 border-none h-auto py-1 font-mono text-[11px] font-medium text-white px-2"
             style={{ backgroundColor: color }}
           >
             {severity}

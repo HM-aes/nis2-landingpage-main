@@ -71,8 +71,14 @@ export default function DashboardPreview() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">REAL-TIME OVERVIEW OF YOUR NIS2 OBLIGATIONS</span>
               </div>
               <div className="absolute top-4 right-6">
-                <Chip size="sm" className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20 px-2 h-6 font-medium text-xs flex items-center gap-1.5">
-                  <div className="size-1.5 rounded-full bg-emerald-500" />
+                <Chip 
+                  size="sm" 
+                  variant="flat"
+                  startContent={
+                    <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  }
+                  className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 h-auto py-1.5 font-medium text-xs"
+                >
                   Audit-ready
                 </Chip>
               </div>
@@ -183,10 +189,21 @@ export default function DashboardPreview() {
                 <div className="flex items-center justify-between w-full relative before:absolute before:left-0 before:right-0 before:top-3 before:h-px before:bg-white/10 before:z-0">
                   {["INTAKE", "PROCESSING", "ANALYSIS", "REVIEW", "COMPLETE"].map((stage, i) => (
                     <div key={stage} className="flex flex-col items-center gap-4 z-10 w-32">
-                      <div className="flex items-center gap-2 bg-[#121212] px-2 py-1 rounded border border-white/10">
-                        <div className={cn("size-1.5 rounded-full", i === 4 ? "bg-emerald-500" : "bg-amber-500")} />
-                        <span className="text-[9px] font-bold uppercase tracking-wider text-white">{stage}</span>
-                      </div>
+                      <Chip
+                        size="sm"
+                        variant="flat"
+                        startContent={
+                          <span className={cn("size-1.5 rounded-full animate-pulse", i === 4 ? "bg-emerald-400" : "bg-amber-400")} />
+                        }
+                        className={cn(
+                          "px-2 py-1 h-auto font-mono text-[9px] font-bold uppercase tracking-wider border",
+                          i === 4 
+                            ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30" 
+                            : "bg-amber-500/10 text-amber-400 border-amber-500/30"
+                        )}
+                      >
+                        {stage}
+                      </Chip>
                       
                       <div className="w-full flex flex-col items-center justify-center border border-white/5 bg-white/[0.02] rounded-lg h-32 p-4 text-center">
                         <ClipboardList className="size-5 text-white/20 mb-3" />
