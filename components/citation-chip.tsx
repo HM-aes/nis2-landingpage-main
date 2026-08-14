@@ -57,11 +57,9 @@ export default function CitationChip({
     <Chip
       size="sm"
       variant="flat"
-      startContent={
-        <span className={`size-1.5 rounded-full ${style.dot} animate-pulse`} />
-      }
-      className={`${style.bg} ${style.border} ${style.text} border font-mono text-xs font-medium px-2 h-auto py-1`}
+      className={`${style.bg} ${style.border} ${style.text} border font-mono text-xs font-medium px-2 h-auto py-1 flex items-center gap-1.5`}
     >
+      <span className={`size-1.5 rounded-full ${style.dot} animate-pulse`} />
       {displayText}
     </Chip>
   );

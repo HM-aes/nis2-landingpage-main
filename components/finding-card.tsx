@@ -33,12 +33,10 @@ export default function FindingCard({
           <Chip
             size="sm"
             variant="flat"
-            startContent={
-              <span className="size-1.5 rounded-full bg-white animate-pulse" />
-            }
-            className="rounded-md mt-0.5 border-none h-auto py-1 font-mono text-[11px] font-medium text-white px-2"
+            className="rounded-md mt-0.5 border-none h-auto py-1 font-mono text-[11px] font-medium text-white px-2 flex items-center gap-1.5"
             style={{ backgroundColor: color }}
           >
+            <span className="size-1.5 rounded-full bg-white animate-pulse" />
             {severity}
           </Chip>
           <div className="min-w-0">

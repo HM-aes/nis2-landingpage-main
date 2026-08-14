@@ -74,11 +74,9 @@ export default function DashboardPreview() {
                 <Chip 
                   size="sm" 
                   variant="flat"
-                  startContent={
-                    <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  }
-                  className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 h-auto py-1.5 font-medium text-xs"
+                  className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 h-auto py-1.5 font-medium text-xs flex items-center gap-1.5"
                 >
+                  <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Audit-ready
                 </Chip>
               </div>
@@ -192,16 +190,14 @@ export default function DashboardPreview() {
                       <Chip
                         size="sm"
                         variant="flat"
-                        startContent={
-                          <span className={cn("size-1.5 rounded-full animate-pulse", i === 4 ? "bg-emerald-400" : "bg-amber-400")} />
-                        }
                         className={cn(
-                          "px-2 py-1 h-auto font-mono text-[9px] font-bold uppercase tracking-wider border",
+                          "px-2 py-1 h-auto font-mono text-[9px] font-bold uppercase tracking-wider border flex items-center gap-1.5",
                           i === 4 
                             ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30" 
                             : "bg-amber-500/10 text-amber-400 border-amber-500/30"
                         )}
                       >
+                        <span className={cn("size-1.5 rounded-full animate-pulse", i === 4 ? "bg-emerald-400" : "bg-amber-400")} />
                         {stage}
                       </Chip>
                       

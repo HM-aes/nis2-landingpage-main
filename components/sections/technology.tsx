@@ -48,11 +48,9 @@ export default function Technology() {
           <Chip 
             size="sm" 
             variant="flat"
-            startContent={
-              <span className="size-1.5 rounded-full bg-amber-400 animate-pulse" />
-            }
-            className="bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1 h-auto"
+            className="bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
+            <span className="size-1.5 rounded-full bg-amber-400 animate-pulse" />
             The Engine
           </Chip>
           <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
@@ -106,45 +104,45 @@ export default function Technology() {
           <Chip 
             size="sm" 
             variant="flat"
-            startContent={<span className="size-1.5 rounded-full bg-cyan-400 animate-pulse" />}
-            className="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto"
+            className="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
+            <span className="size-1.5 rounded-full bg-cyan-400 animate-pulse" />
             document intake
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
             size="sm" 
             variant="flat"
-            startContent={<span className="size-1.5 rounded-full bg-indigo-400 animate-pulse" />}
-            className="bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto"
+            className="bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
+            <span className="size-1.5 rounded-full bg-indigo-400 animate-pulse" />
             RAG retrieval
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
             size="sm" 
             variant="flat"
-            startContent={<span className="size-1.5 rounded-full bg-violet-400 animate-pulse" />}
-            className="bg-violet-500/10 border border-violet-500/30 text-violet-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto"
+            className="bg-violet-500/10 border border-violet-500/30 text-violet-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
+            <span className="size-1.5 rounded-full bg-violet-400 animate-pulse" />
             agent reasoning
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
             size="sm" 
             variant="flat"
-            startContent={<span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />}
-            className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto"
+            className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
+            <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
             pydantic validation
           </Chip>
           <ArrowDown className="size-3 text-muted-foreground/30 mx-auto" />
           <Chip 
             size="sm" 
             variant="flat"
-            startContent={<span className="size-1.5 rounded-full bg-rose-400 animate-pulse" />}
-            className="bg-rose-500/10 border border-rose-500/30 text-rose-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto"
+            className="bg-rose-500/10 border border-rose-500/30 text-rose-400 font-mono text-[10px] font-semibold uppercase tracking-wider px-2 py-1 h-auto flex items-center gap-1.5"
           >
+            <span className="size-1.5 rounded-full bg-rose-400 animate-pulse" />
             article-grounded finding
           </Chip>
         </Reveal>

@@ -107,11 +107,9 @@ export default function DashboardSidebar() {
                     <Chip 
                       size="sm" 
                       variant="flat"
-                      startContent={
-                        <span className="size-1.5 rounded-full bg-amber-400 animate-pulse" />
-                      }
-                      className="h-auto py-1 px-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[9px] font-bold uppercase"
+                      className="h-auto py-1 px-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[9px] font-bold uppercase flex items-center gap-1.5"
                     >
+                      <span className="size-1.5 rounded-full bg-amber-400 animate-pulse" />
                       {item.badge}
                     </Chip>
                   )}
