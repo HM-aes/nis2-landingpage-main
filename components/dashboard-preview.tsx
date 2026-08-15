@@ -24,22 +24,23 @@ export default function DashboardPreview() {
       <div className="aria-hidden pointer-events-none absolute -inset-4 rounded-3xl bg-amber-500/10 blur-2xl" />
 
       {/* Main App Window */}
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] shadow-2xl flex font-sans">
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] shadow-2xl flex flex-col md:flex-row font-sans">
         
-        {/* Sidebar */}
-        <div className="w-[260px] shrink-0 border-r border-white/5">
+        {/* Sidebar - hidden on mobile, shown on md+ */}
+        <div className="hidden md:block md:w-[260px] shrink-0 border-r border-white/5">
           <DashboardSidebar />
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col h-[760px] overflow-hidden">
+        <div className="flex-1 flex flex-col h-[760px] md:h-[760px] overflow-hidden">
           
           {/* Top Navbar */}
-          <div className="flex h-16 items-center justify-between px-8 border-b border-white/5">
+          <div className="flex h-16 items-center justify-between px-4 md:px-8 border-b border-white/5">
             <h1 className="text-lg font-semibold text-white">Dashboard</h1>
             
-            <div className="flex items-center gap-6">
-              <div className="relative w-64">
+            <div className="flex items-center gap-3 md:gap-6">
+              {/* Search - hidden on mobile, shown on lg+ */}
+              <div className="hidden lg:block relative w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <input
                   type="text"
@@ -52,7 +53,7 @@ export default function DashboardPreview() {
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 md:gap-4">
                 <Bell className="size-5 text-muted-foreground hover:text-white cursor-pointer transition-colors" />
                 <div className="grid h-8 w-8 place-items-center rounded border border-amber-600/30 bg-amber-600/10 text-amber-500 font-bold text-sm cursor-pointer hover:bg-amber-600/20 transition-colors">
                   S
@@ -62,15 +63,15 @@ export default function DashboardPreview() {
           </div>
 
           {/* Scrollable Canvas */}
-          <div className="flex-1 overflow-y-auto p-8 space-y-6 scrollbar-hide">
+          <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-4 md:space-y-6 scrollbar-hide">
             
             {/* Welcome Banner */}
-            <div className="relative overflow-hidden rounded-xl border border-white/5 bg-[#121212] p-8 text-center flex flex-col items-center justify-center min-h-[320px]">
-              <div className="absolute top-4 left-6 flex items-center gap-2">
+            <div className="relative overflow-hidden rounded-xl border border-white/5 bg-[#121212] p-6 md:p-8 text-center flex flex-col items-center justify-center min-h-[280px] md:min-h-[320px]">
+              <div className="hidden md:flex absolute top-4 left-6 items-center gap-2">
                 <div className="size-1.5 rounded-full bg-amber-500" />
                 <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">REAL-TIME OVERVIEW OF YOUR NIS2 OBLIGATIONS</span>
               </div>
-              <div className="absolute top-4 right-6">
+              <div className="absolute top-4 right-4 md:right-6">
                 <Chip 
                   size="sm"
                   className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 h-auto py-1.5 font-medium text-xs flex items-center gap-1.5"
@@ -88,12 +89,12 @@ export default function DashboardPreview() {
                   </div>
                 </div>
                 
-                <h2 className="text-2xl font-semibold text-white">Welcome to NIS2 Analyzer</h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h2 className="text-xl md:text-2xl font-semibold text-white">Welcome to NIS2 Analyzer</h2>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed px-4">
                   Add your first client to start NIS2 compliance analyses. You can then create an audit, upload documents, and start the AI analysis.
                 </p>
                 
-                <div className="flex items-center gap-3 mt-4">
+                <div className="flex flex-col sm:flex-row items-center gap-3 mt-4">
                   <button className="flex items-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 transition-colors px-4 py-2 text-sm font-semibold text-black">
                     <Plus className="size-4" />
                     Add First Client
@@ -107,7 +108,7 @@ export default function DashboardPreview() {
             </div>
 
             {/* Metrics Row */}
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Card 1 */}
               <div className="rounded-xl border border-white/5 bg-[#121212] p-5 flex flex-col justify-between h-[120px]">
                 <div className="flex items-center justify-between">
@@ -174,7 +175,7 @@ export default function DashboardPreview() {
             </div>
 
             {/* Lower Section Grid */}
-            <div className="grid grid-cols-[2.5fr_1fr] gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_1fr] gap-4">
               
               {/* Audit Pipeline */}
               <div className="rounded-xl border border-white/5 bg-[#121212] p-6">
@@ -183,9 +184,9 @@ export default function DashboardPreview() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">AUDIT PIPELINE</span>
                 </div>
                 
-                <div className="flex items-center justify-between w-full relative before:absolute before:left-0 before:right-0 before:top-3 before:h-px before:bg-white/10 before:z-0">
+                <div className="flex flex-wrap md:flex-nowrap items-center justify-between w-full gap-4 md:gap-0 relative md:before:absolute md:before:left-0 md:before:right-0 md:before:top-3 md:before:h-px md:before:bg-white/10 md:before:z-0">
                   {["INTAKE", "PROCESSING", "ANALYSIS", "REVIEW", "COMPLETE"].map((stage, i) => (
-                    <div key={stage} className="flex flex-col items-center gap-4 z-10 w-32">
+                    <div key={stage} className="flex flex-col items-center gap-4 z-10 w-full sm:w-32">
                       <Chip
                         size="sm"
                         className={cn(
@@ -199,9 +200,9 @@ export default function DashboardPreview() {
                         {stage}
                       </Chip>
                       
-                      <div className="w-full flex flex-col items-center justify-center border border-white/5 bg-white/[0.02] rounded-lg h-32 p-4 text-center">
-                        <ClipboardList className="size-5 text-white/20 mb-3" />
-                        <span className="text-xs text-muted-foreground max-w-[80px]">No audits in this stage</span>
+                      <div className="w-full flex flex-col items-center justify-center border border-white/5 bg-white/[0.02] rounded-lg h-28 md:h-32 p-3 md:p-4 text-center">
+                        <ClipboardList className="size-4 md:size-5 text-white/20 mb-2 md:mb-3" />
+                        <span className="text-[10px] md:text-xs text-muted-foreground max-w-[80px]">No audits in this stage</span>
                         {i === 0 && (
                           <button className="mt-4 rounded-md border border-amber-500/30 bg-amber-500/10 text-amber-500 px-3 py-1.5 text-xs font-semibold hover:bg-amber-500/20 transition-colors">
                             + New audit
