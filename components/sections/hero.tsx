@@ -56,20 +56,22 @@ export default function Hero() {
             color="warning"
             className="px-1 font-mono text-[10px] font-semibold tracking-wide"
           >
-            AES AI SOLUTIONS · INDEPENDENT AI ENGINEERING · ONE CLIENT AT A TIME
+            INDEPENDENT AI ENGINEERING · ONE CLIENT AT A TIME
           </Chip>
         </motion.div>
 
-        {/* ── 2. H1 ── */}
-        <motion.h1
-          {...settle(1, 24)}
-          className="mt-6 max-w-3xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-foreground sm:text-5xl lg:text-[4.25rem]"
-        >
-          I build the hard AI systems{" "}
-          <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 bg-clip-text text-transparent">
-            most teams won&apos;t attempt.
-          </span>
-        </motion.h1>
+        {/* ── 2. Brand line + H1 ── */}
+        <motion.div {...settle(1, 24)} className="mt-6 max-w-3xl">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90">
+            AES AI Solutions
+          </p>
+          <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-foreground sm:text-5xl lg:text-[4.25rem]">
+            I build the hard AI systems{" "}
+            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 bg-clip-text text-transparent">
+              most teams won&apos;t attempt.
+            </span>
+          </h1>
+        </motion.div>
 
         {/* ── 3. Subtitle ── */}
         <motion.p
