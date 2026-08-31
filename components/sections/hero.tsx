@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
-import { Chip } from "@heroui/react";
+import { Chip } from "@heroui/react/chip";
 import { BOOKING_URL } from "@/lib/site";
 
 const STACK_CONFIG: Record<

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardHeader, CardContent, CardFooter } from "@heroui/react";
+import { Card, CardHeader, CardContent, CardFooter } from "@heroui/react/card";
 import { motion, useReducedMotion } from "motion/react";
 import {
   Compass,

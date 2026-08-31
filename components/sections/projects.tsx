@@ -2,7 +2,7 @@
 
 import { Reveal } from "@/components/reveal";
 import SectionRule from "@/components/section-rule";
-import { Chip } from "@heroui/react";
+import { Chip } from "@heroui/react/chip";
 import { CASE_STUDY_URL } from "@/lib/site";
 
 type Status = "production" | "development";
