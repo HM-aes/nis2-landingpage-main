@@ -34,9 +34,11 @@ const settle = (i: number, distance = 20) => ({
 export default function Hero() {
   const { scrollY } = useScroll();
 
-  const opacity = useTransform(scrollY, [0, 420], [1, 0]);
-  const y = useTransform(scrollY, [0, 420], [0, -60]);
-  const scale = useTransform(scrollY, [0, 420], [1, 0.97]);
+  // Fade the hero out only as it slides up under the sticky header —
+  // stays fully readable through the first stretch of scroll, then eases away.
+  const opacity = useTransform(scrollY, [140, 720], [1, 0]);
+  const y = useTransform(scrollY, [140, 720], [0, -40]);
+  const scale = useTransform(scrollY, [140, 720], [1, 0.985]);
 
   return (
     <section className="relative overflow-hidden px-4 pt-16 pb-20 sm:px-10 sm:pt-20 sm:pb-24 lg:pl-16">
@@ -65,9 +67,9 @@ export default function Hero() {
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90">
             AES AI Solutions
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-foreground sm:text-5xl lg:text-[4.25rem]">
+          <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-[4.25rem]">
             I build the hard AI systems{" "}
-            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 bg-clip-text font-medium text-transparent">
               most teams won&apos;t attempt.
             </span>
           </h1>
@@ -76,7 +78,7 @@ export default function Hero() {
         {/* ── 3. Subtitle ── */}
         <motion.p
           {...settle(2, 18)}
-          className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+          className="mt-6 max-w-xl text-base font-light leading-relaxed text-foreground/75 sm:text-lg"
         >
           Compliance RAG, OSINT platforms, and production LLM tooling — designed,
           built, and shipped by one person who&apos;s done it before.
