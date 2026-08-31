@@ -281,6 +281,100 @@ body {
   box-shadow: 0 2px 6px oklch(0% 0 0 / 0.10);
 }
 
+/* ── Bento grid (Projects) ──────────────────────────────────────────── */
+.bento-grid {
+  --bento-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Cinematic focus: dim the siblings of the hovered tile. */
+@media (hover: hover) {
+  .bento-grid:hover .bento-tile {
+    opacity: 0.48;
+    filter: saturate(0.75);
+  }
+  .bento-grid:hover .bento-tile:hover {
+    opacity: 1;
+    filter: none;
+  }
+}
+.bento-tile {
+  position: relative;
+  isolation: isolate;
+  transition:
+    opacity 0.4s var(--bento-ease),
+    filter 0.4s var(--bento-ease),
+    transform 0.4s var(--bento-ease),
+    border-color 0.4s var(--bento-ease);
+}
+.bento-tile:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--signal) 45%, transparent);
+}
+/* Pointer-tracked border highlight (Aceternity-style). */
+.bento-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    220px circle at var(--bx, -200px) var(--by, -200px),
+    color-mix(in srgb, var(--signal) 65%, transparent),
+    transparent 70%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s var(--bento-ease);
+  z-index: 1;
+}
+/* Soft inner glow that follows the cursor. */
+.bento-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    460px circle at var(--bx, -200px) var(--by, -200px),
+    color-mix(in srgb, var(--signal) 12%, transparent),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s var(--bento-ease);
+  pointer-events: none;
+  z-index: 0;
+}
+.bento-tile:hover::before,
+.bento-tile:hover::after {
+  opacity: 1;
+}
+.bento-tile > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ambient tile motifs */
+@keyframes bento-radar { to { transform: rotate(360deg); } }
+@keyframes bento-node-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.95; }
+}
+@keyframes bento-scan {
+  0%, 100% { transform: translateY(-8%); opacity: 0.35; }
+  50% { transform: translateY(108%); opacity: 0.9; }
+}
+@keyframes bento-draw { to { stroke-dashoffset: 0; } }
+@keyframes bento-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-14px); }
+}
+.bento-motif line,
+.bento-motif circle,
+.bento-motif path,
+.bento-motif rect { vector-effect: non-scaling-stroke; }
+
 /* ── Reduced motion ──────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -288,6 +382,10 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  .bento-grid:hover .bento-tile {
+    opacity: 1 !important;
+    filter: none !important;
   }
 }
 
