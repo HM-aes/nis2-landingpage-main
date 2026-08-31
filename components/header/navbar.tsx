@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { BOOKING_URL } from "@/lib/site";
 
 const SECTIONS = [
+  { label: "Work", href: "#work" },
+  { label: "How I work", href: "#how" },
   { label: "About", href: "#about" },
-  { label: "Dashboard", href: "#evidence" },
-  { label: "Scope", href: "#scope" },
-  { label: "Tech", href: "#tech" },
-  { label: "Report", href: "#signup" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -36,13 +36,13 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <motion.a
           href="#top"
-          aria-label="NIS2 Analyzer — back to top"
+          aria-label="AES AI Solutions — back to top"
           {...item(LOGO_AT)}
           className="font-mono text-sm tracking-widest font-semibold transition-opacity hover:opacity-75 shrink-0"
         >
-          <span style={{ color: "#d97706" }}>NIS2</span>
+          <span style={{ color: "#d97706" }}>AES</span>
           <span style={{ color: "#f59e0b", fontWeight: 900 }}>·</span>
-          <span style={{ color: "#a1a1aa" }}>ANALYZER</span>
+          <span style={{ color: "#a1a1aa" }}>AI SOLUTIONS</span>
         </motion.a>
 
         {/* ── Desktop nav links ── */}
@@ -73,11 +73,12 @@ export default function Navbar() {
         {/* ── Right side: CTA + mobile hamburger ── */}
         <motion.div {...item(CTA_AT)} className="flex items-center gap-2 sm:gap-3">
           {/* CTA — hidden on very small screens, shown from sm upward */}
+          {/* TODO(placeholder): BOOKING_URL — set real Calendly/Cal.com link in lib/site.ts */}
           <a
-            href="#signup"
+            href={BOOKING_URL}
             className="hidden sm:inline-flex btn-glow-primary rounded-lg px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105"
           >
-            Start free audit
+            Book a call
           </a>
           {/* Hamburger — md and below */}
           <button
@@ -126,12 +127,13 @@ export default function Navbar() {
                 </motion.a>
               ))}
               {/* CTA in mobile menu */}
+              {/* TODO(placeholder): BOOKING_URL — set real Calendly/Cal.com link in lib/site.ts */}
               <a
-                href="#signup"
+                href={BOOKING_URL}
                 onClick={() => setOpen(false)}
                 className="mt-2 btn-glow-primary flex items-center justify-center rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-wider"
               >
-                Start free audit
+                Book a call
               </a>
             </nav>
           </motion.div>

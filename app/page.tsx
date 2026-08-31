@@ -1,19 +1,17 @@
 import Hero from "@/components/sections/hero";
+import Projects from "@/components/sections/projects";
+import HowIWork from "@/components/sections/how-i-work";
 import About from "@/components/sections/about";
-import ProductPreview from "@/components/sections/product-preview";
-import Scope from "@/components/sections/scope";
-import Technology from "@/components/sections/technology";
-import ProofSignup from "@/components/sections/proof-signup";
+import Contact from "@/components/sections/contact";
 
 export default function Page() {
   return (
     <>
       <Hero />
+      <Projects />
+      <HowIWork />
       <About />
-      <ProductPreview />
-      <Scope />
-      <Technology />
-      <ProofSignup />
+      <Contact />
     </>
   );
 }
