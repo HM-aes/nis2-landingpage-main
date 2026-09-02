@@ -108,8 +108,8 @@ function Word({
   progress: MotionValue<number>;
   range: [number, number];
 }) {
-  const opacity = useTransform(progress, range, [0.12, 1]);
-  const blurPx = useTransform(progress, range, [5, 0]);
+  const opacity = useTransform(progress, range, [0.22, 1]);
+  const blurPx = useTransform(progress, range, [4, 0]);
   const filter = useMotionTemplate`blur(${blurPx}px)`;
   return (
     <motion.span style={{ opacity, filter }} className="mr-[0.25em] inline-block">
@@ -139,7 +139,7 @@ function ScrollLead() {
   return (
     <p
       ref={ref}
-      className="max-w-4xl font-display text-2xl font-semibold leading-[1.3] tracking-tight text-foreground sm:text-3xl lg:text-[2.6rem]"
+      className="max-w-4xl font-display text-2xl font-medium leading-[1.3] tracking-tight text-zinc-400 sm:text-3xl lg:text-[2.6rem]"
     >
       {words.map((w, i) => {
         const start = i / words.length;
@@ -502,12 +502,25 @@ export default function Projects() {
       ref={sectionRef}
       className="relative overflow-hidden border-t border-foreground/10 bg-background py-24"
     >
-      {/* Parallax ambient glow */}
+      {/* Ambient aurora — slow drifting light, parallaxed with scroll */}
       <motion.div
         aria-hidden
         style={reduced ? undefined : { y: glowY }}
-        className="pointer-events-none absolute left-1/2 top-1/3 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-amber-500/[.06] blur-[120px]"
-      />
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div
+          className="absolute left-[6%] top-[8%] h-[30rem] w-[30rem] rounded-full bg-amber-500/[.08] blur-[130px]"
+          style={{ animation: "bento-aurora-a 24s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute right-[4%] bottom-[6%] h-[24rem] w-[24rem] rounded-full bg-violet-500/[.06] blur-[120px]"
+          style={{ animation: "bento-aurora-b 30s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute left-1/2 top-1/2 h-[22rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-400/[.04] blur-[140px]"
+          style={{ animation: "bento-aurora-a 34s ease-in-out infinite reverse" }}
+        />
+      </motion.div>
 
       <SectionRule label="THE WORK" align="left" />
 
