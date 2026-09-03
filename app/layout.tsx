@@ -26,11 +26,14 @@ export const metadata: Metadata = {
     "AES builds AI tools for compliance, security, and complex work — built to run in production, explained in plain language, and yours to control.",
 };
 
-// Force dark mode always
+// Force dark mode always, and always start a fresh load at the top.
+// Running in <head> during parse means "manual" suppresses the browser's
+// scroll restoration for THIS load, not just the next one.
 const themeScript = `(function(){
   try {
     document.documentElement.classList.add("dark");
     document.documentElement.setAttribute("data-theme", "dark");
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   } catch(e) {}
 })();`;
 
