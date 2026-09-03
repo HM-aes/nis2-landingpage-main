@@ -67,8 +67,8 @@
   --color-amber-200:    var(--amber-200);
 
   /* Slatey aliases */
-  --color-slatey-500:   oklch(0.55 0.014 286.0);
-  --color-slatey-400:   oklch(70.5% 0.015 286.067);
+  --color-slatey-500:   oklch(0.62 0.014 286.0);
+  --color-slatey-400:   oklch(78% 0.013 286.067);
   --color-slatey-300:   oklch(0.84 0.006 286.0);
   --color-slatey-200:   oklch(90% 0.004 286.32);
 

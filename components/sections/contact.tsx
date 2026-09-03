@@ -28,7 +28,7 @@ export default function Contact() {
 
       <div className="mx-auto grid max-w-5xl gap-10 px-6 pb-24 md:grid-cols-2">
         <FadeIn>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Have a hard problem worth solving?
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
@@ -54,7 +54,7 @@ export default function Contact() {
 
         <FadeIn delay={0.08}>
           <div className="glass-card rounded-2xl p-7 shadow-2xl">
-            <h3 className="font-display text-xl font-bold text-foreground">
+            <h3 className="font-display text-xl font-semibold text-foreground">
               Book a call
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ export default function Contact() {
             {/* TODO(placeholder): BOOKING_URL — set real Calendly/Cal.com link in lib/site.ts */}
             <a
               href={BOOKING_URL}
-              className="group btn-glow-primary mt-6 flex h-11 items-center justify-center gap-2.5 rounded-xl text-sm font-bold tracking-wide transition-all hover:scale-[1.02]"
+              className="group btn-glow-primary mt-6 flex h-11 items-center justify-center gap-2.5 rounded-xl text-sm font-semibold tracking-wide transition-all hover:scale-[1.02]"
             >
               Book a call
               <ArrowRight

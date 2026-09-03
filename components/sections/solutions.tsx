@@ -144,7 +144,7 @@ function ProductRow({ product, index }: { product: Product; index: number }) {
 
       {/* Text */}
       <div>
-        <h3 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h3 className="font-display text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
           {product.name}
         </h3>
         <p className="mt-2 text-lg font-medium text-amber-300 sm:text-xl">
@@ -214,7 +214,7 @@ export default function Solutions() {
       <div className="mx-auto max-w-6xl px-6 pb-24">
         <ScrollReveal
           text="Each tool takes a hard, expert-level job off your team and hands back a clear answer."
-          className="max-w-4xl font-display text-2xl font-medium leading-[1.3] tracking-tight text-zinc-400 sm:text-3xl lg:text-[2.4rem]"
+          className="max-w-4xl font-display text-2xl font-medium leading-[1.3] tracking-tight text-zinc-300 sm:text-3xl lg:text-[2.4rem]"
         />
 
         <div className="mt-16 space-y-20 lg:space-y-28">

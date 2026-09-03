@@ -119,7 +119,7 @@ export default function Philosophy() {
               className="bento-tile group/card rounded-2xl border border-white/[.08] bg-[color-mix(in_srgb,var(--surface)_78%,transparent)] p-6 backdrop-blur-md"
             >
               <span aria-hidden className="block size-1.5 rounded-full bg-amber-400" />
-              <h3 className="mt-4 font-display text-base font-bold text-foreground">
+              <h3 className="mt-4 font-display text-base font-semibold text-foreground">
                 {p.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

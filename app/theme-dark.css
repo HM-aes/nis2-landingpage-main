@@ -27,7 +27,7 @@
 
   /* ── Text tones ── */
   --muted:               oklch(27.4% 0.006 286.033);   /* default chip colour in dark */
-  --muted-foreground:    oklch(70.5% 0.015 286.067);  /* ~#A8A8B8 — readable subdued */
+  --muted-foreground:    oklch(80% 0.013 286.067);  /* ~#C3C3CC — lifted, less grey */
 
   /* ── Borders & Inputs ── */
   --border:              oklch(28% 0.006 286.033);     /* ~#252529 — subtle dark border */

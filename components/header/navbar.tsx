@@ -42,7 +42,7 @@ export default function Navbar() {
         >
           <span style={{ color: "#d97706" }}>AES</span>
           <span style={{ color: "#f59e0b", fontWeight: 900 }}> · </span>
-          <span style={{ color: "#a1a1aa" }}>AI Solutions</span>
+          <span style={{ color: "#d4d4d8" }}>AI Solutions</span>
         </motion.a>
 
         {/* ── Desktop nav links ── */}
@@ -56,7 +56,7 @@ export default function Navbar() {
               href={section.href}
               {...item(NAV_START + i * NAV_STEP)}
               className="group relative px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all duration-200"
-              style={{ color: "#a1a1aa" }}
+              style={{ color: "#d4d4d8" }}
               onMouseEnter={e => {
                 (e.currentTarget as HTMLElement).style.textDecoration = "underline";
                 (e.currentTarget as HTMLElement).style.textUnderlineOffset = "4px";
@@ -122,7 +122,7 @@ export default function Navbar() {
                   transition={{ delay: i * 0.06, duration: 0.3, ease }}
                   onClick={() => setOpen(false)}
                   className="flex items-center px-3 py-3 rounded-xl text-sm font-medium transition-all duration-150"
-                  style={{ color: "#a1a1aa" }}
+                  style={{ color: "#d4d4d8" }}
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLElement).style.textDecoration = "underline";
                     (e.currentTarget as HTMLElement).style.textUnderlineOffset = "4px";
