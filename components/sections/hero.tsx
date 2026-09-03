@@ -1,117 +1,78 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
-import { Chip } from "@heroui/react/chip";
+import { ArrowRight, ArrowDown } from "lucide-react";
 import { BOOKING_URL } from "@/lib/site";
 
-const STACK_CONFIG: Record<
-  string,
-  { color: "warning" | "success" | "accent" | "danger" | "default" }
-> = {
-  Django: { color: "success" },
-  "Pydantic AI": { color: "accent" },
-  Qdrant: { color: "warning" },
-  HTMX: { color: "danger" },
-  "Alpine.js": { color: "default" },
-};
-
-const STACK = ["Django", "Pydantic AI", "Qdrant", "HTMX", "Alpine.js"] as const;
-
-const PIPELINE = ["COMPLIANCE RAG", "OSINT PLATFORMS", "PRODUCTION LLM TOOLING"];
-
 const ease = [0.22, 1, 0.36, 1] as const;
-
-const BASE = 0.4;
-const STEP = 0.28;
+const BASE = 0.15;
+const STEP = 0.14;
 
 const settle = (i: number, distance = 20) => ({
   initial: { opacity: 0, y: distance },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 1.0, delay: BASE + i * STEP, ease },
+  transition: { duration: 0.95, delay: BASE + i * STEP, ease },
 });
 
 export default function Hero() {
   const { scrollY } = useScroll();
-
-  // Fade the hero out only as it slides up under the sticky header —
-  // stays fully readable through the first stretch of scroll, then eases away.
   const opacity = useTransform(scrollY, [140, 720], [1, 0]);
   const y = useTransform(scrollY, [140, 720], [0, -40]);
-  const scale = useTransform(scrollY, [140, 720], [1, 0.985]);
 
   return (
-    <section className="relative overflow-hidden px-4 pt-16 pb-20 sm:px-10 sm:pt-20 sm:pb-24 lg:pl-16">
-      {/* Background ambient glow */}
-      <div className="aria-hidden pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl" />
-      <div className="aria-hidden pointer-events-none absolute top-20 right-10 h-96 w-96 rounded-full bg-amber-400/5 blur-3xl" />
+    <section className="relative overflow-hidden px-4 pt-20 pb-24 sm:px-10 sm:pt-28 sm:pb-28 lg:pl-16">
+      {/* Ambient aurora */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div
+          className="absolute -left-10 -top-24 h-[32rem] w-[32rem] rounded-full bg-amber-500/[.09] blur-[130px]"
+          style={{ animation: "bento-aurora-a 24s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute right-0 top-10 h-[24rem] w-[24rem] rounded-full bg-violet-500/[.06] blur-[120px]"
+          style={{ animation: "bento-aurora-b 30s ease-in-out infinite" }}
+        />
+      </div>
 
-      <motion.div style={{ opacity, y, scale }}>
-        {/* ── 1. Badge ── */}
-        <motion.div {...settle(0, 12)} className="flex items-center gap-2.5">
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
-          </span>
-          <Chip
-            size="sm"
-            color="warning"
-            className="px-1 font-mono text-[10px] font-semibold tracking-wide"
-          >
-            INDEPENDENT AI ENGINEERING · ONE CLIENT AT A TIME
-          </Chip>
-        </motion.div>
+      <motion.div style={{ opacity, y }} className="relative max-w-3xl">
+        {/* Eyebrow */}
+        <motion.p
+          {...settle(0, 12)}
+          className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-amber-400/90"
+        >
+          AI solutions for compliance, security, and complex work
+        </motion.p>
 
-        {/* ── 2. Brand line + H1 ── */}
-        <motion.div {...settle(1, 24)} className="mt-6 max-w-3xl">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90">
-            AES AI Solutions
-          </p>
-          <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-[4.25rem]">
-            I build the hard AI systems{" "}
-            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 bg-clip-text font-medium text-transparent">
-              most teams won&apos;t attempt.
-            </span>
-          </h1>
-        </motion.div>
+        {/* Headline */}
+        <motion.h1
+          {...settle(1, 24)}
+          className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-[4.25rem]"
+        >
+          Hard problems,{" "}
+          <span className="text-amber-300">quietly solved.</span>
+        </motion.h1>
 
-        {/* ── 3. Subtitle ── */}
+        {/* Subhead */}
         <motion.p
           {...settle(2, 18)}
           className="mt-6 max-w-xl text-base font-light leading-relaxed text-foreground/75 sm:text-lg"
         >
-          Compliance RAG, OSINT platforms, and production LLM tooling — designed,
-          built, and shipped by one person who&apos;s done it before.
+          AES builds AI tools that take the heavy, expert-level work off your
+          team&apos;s plate — and hand back clear answers anyone can act on.
         </motion.p>
 
-        {/* ── 4. Stack chips ── */}
-        <motion.div {...settle(3, 12)} className="mt-6 flex flex-wrap gap-2">
-          {STACK.map((tech) => {
-            const config = STACK_CONFIG[tech] || { color: "default" };
-            return (
-              <Chip
-                key={tech}
-                size="sm"
-                color={config.color}
-                className="font-sans text-xs font-semibold uppercase tracking-wide transition-all duration-200 hover:scale-105"
-              >
-                {tech}
-              </Chip>
-            );
-          })}
-        </motion.div>
-
-        {/* ── 5. CTA buttons ── */}
+        {/* CTAs */}
         <motion.div
-          {...settle(4, 14)}
-          className="mt-8 flex flex-wrap items-center gap-4"
+          {...settle(3, 14)}
+          className="mt-9 flex flex-wrap items-center gap-4"
         >
           {/* TODO(placeholder): BOOKING_URL — set real Calendly/Cal.com link in lib/site.ts */}
           <a
             href={BOOKING_URL}
             className="group btn-glow-primary inline-flex h-11 items-center gap-2.5 rounded-xl px-6 text-sm font-semibold tracking-wide transition-all hover:scale-[1.03]"
           >
-            <Sparkles className="size-4 animate-pulse text-amber-400" />
             Book a call
             <ArrowRight
               size={16}
@@ -119,74 +80,25 @@ export default function Hero() {
             />
           </a>
           <a
-            href="#work"
+            href="#solutions"
             className="btn-corporate-light inline-flex h-11 items-center gap-2 rounded-xl px-5 text-sm font-medium transition-all"
           >
-            See the work
+            See our solutions
             <ArrowDown size={14} className="opacity-60" />
           </a>
         </motion.div>
 
-        {/* ── 6. Pipeline strip ── */}
-        <motion.div
-          {...settle(5, 10)}
-          className="mt-10 flex flex-wrap items-center gap-2"
+        {/* Supporting line */}
+        <motion.p
+          {...settle(4, 10)}
+          className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-slatey-400"
         >
-          {PIPELINE.map((step, i) => (
-            <span key={step} className="flex items-center gap-2">
-              <Chip
-                size="sm"
-                color="warning"
-                className="font-mono text-[10px] font-bold tracking-wide"
-              >
-                {step}
-              </Chip>
-              {i < PIPELINE.length - 1 && (
-                <span className="relative flex items-center">
-                  <svg
-                    width="32"
-                    height="2"
-                    viewBox="0 0 32 2"
-                    fill="none"
-                    aria-hidden
-                  >
-                    <line
-                      x1="0"
-                      y1="1"
-                      x2="32"
-                      y2="1"
-                      stroke="currentColor"
-                      strokeWidth="1"
-                      strokeDasharray="2 4"
-                      className="dash-animate text-amber-500/40"
-                    />
-                  </svg>
-                  <ArrowRight size={12} className="text-amber-400/60" />
-                </span>
-              )}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* ── 7. Credibility strip ── */}
-        <motion.div
-          {...settle(6, 10)}
-          className="mt-12 max-w-2xl border-t border-white/[.08] pt-8"
-        >
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            Most engineers can build the system. Far fewer can sit in a room with
-            a non-technical executive and make them understand{" "}
-            <span className="font-semibold text-foreground">why it matters</span>.
-            My background training client-facing teams and working with
-            financial-markets data means I ship the tech{" "}
-            <span className="font-semibold text-foreground">and</span> translate
-            it for the people who sign off on it.
-          </p>
-          <p className="mt-5 font-mono text-xs text-slatey-400">
-            AES AI Solutions — KVK-registered, Netherlands · Operating from Porto,
-            Portugal
-          </p>
-        </motion.div>
+          <span>Built to run in production.</span>
+          <span className="text-slatey-500">·</span>
+          <span>Explained in plain language.</span>
+          <span className="text-slatey-500">·</span>
+          <span>Yours to control.</span>
+        </motion.p>
       </motion.div>
     </section>
   );

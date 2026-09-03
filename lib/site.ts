@@ -8,23 +8,21 @@
 /** Calendly / Cal.com booking URL for every "Book a call" button. */
 export const BOOKING_URL = "#book"; // TODO: replace with real Calendly/Cal.com link
 
-/** Public contact email (used for the "email me directly" fallback + footer). */
-export const CONTACT_EMAIL = "your@email.com"; // TODO: replace with real address
+/** Public contact email (used for "email us directly" + footer). */
+export const CONTACT_EMAIL = "hello@aes-ai.nl"; // TODO: replace with real address
 
 /** KVK registration number — shown in the trust line + footer. */
 export const KVK_NUMBER = "00000000"; // TODO: replace with real KVK number
 
-/** Primary domain shown in the footer. */
+/** Primary domain. */
 export const SITE_DOMAIN = "aes-ai.nl";
 
-export const LINKEDIN_URL = "#linkedin"; // TODO: replace with real LinkedIn URL
-export const GITHUB_URL = "#github"; // TODO: replace with real GitHub URL
-
-/**
- * Where "Request case study →" links point.
- * TODO: decide per project — mailto vs. a real form. Placeholder for now.
- */
-export const CASE_STUDY_URL = "#case-study"; // TODO
+// ── Per-product CTAs ────────────────────────────────────────────────────────
+// TODO: point these at the real app / signup / demo-request destinations.
+export const NIS2_APP_URL = "#nis2"; // "Try NIS2 Analyzer"
+export const LEX_DEMO_URL = "#lex-demo"; // "Book a demo"
+export const DOCSENSE_URL = "#docsense"; // "Try it free"
+export const NOTIFY_URL = "#notify"; // "Get notified" (TankSlim)
 
 export const mailto = (subject: string) =>
   `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;

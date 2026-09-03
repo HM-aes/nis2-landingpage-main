@@ -6,9 +6,9 @@ import { Menu, X } from "lucide-react";
 import { BOOKING_URL } from "@/lib/site";
 
 const SECTIONS = [
-  { label: "Work", href: "#work" },
-  { label: "How I work", href: "#how" },
-  { label: "About", href: "#about" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Philosophy", href: "#philosophy" },
+  { label: "How it works", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -41,8 +41,8 @@ export default function Navbar() {
           className="font-mono text-sm tracking-widest font-semibold transition-opacity hover:opacity-75 shrink-0"
         >
           <span style={{ color: "#d97706" }}>AES</span>
-          <span style={{ color: "#f59e0b", fontWeight: 900 }}>·</span>
-          <span style={{ color: "#a1a1aa" }}>AI SOLUTIONS</span>
+          <span style={{ color: "#f59e0b", fontWeight: 900 }}> · </span>
+          <span style={{ color: "#a1a1aa" }}>AI Solutions</span>
         </motion.a>
 
         {/* ── Desktop nav links ── */}
@@ -52,7 +52,7 @@ export default function Navbar() {
         >
           {SECTIONS.map((section, i) => (
             <motion.a
-              key={section.href}
+              key={section.label}
               href={section.href}
               {...item(NAV_START + i * NAV_STEP)}
               className="group relative px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all duration-200"
@@ -92,6 +92,14 @@ export default function Navbar() {
         </motion.div>
       </div>
 
+      {/* ── Microline ── */}
+      <motion.p
+        {...item(CTA_AT + 0.15)}
+        className="hidden border-t border-white/[0.04] px-4 py-1.5 text-center font-mono text-[10px] tracking-wide text-slatey-500 md:block"
+      >
+        KVK-registered, Netherlands · your data stays yours
+      </motion.p>
+
       {/* ── Mobile slide-down menu ── */}
       <AnimatePresence>
         {open && (
@@ -107,7 +115,7 @@ export default function Navbar() {
             <nav className="flex flex-col px-4 py-3 gap-1">
               {SECTIONS.map((section, i) => (
                 <motion.a
-                  key={section.href}
+                  key={section.label}
                   href={section.href}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}

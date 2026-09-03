@@ -6,25 +6,35 @@ import SectionRule from "@/components/section-rule";
 import { BOOKING_URL, CONTACT_EMAIL, mailto } from "@/lib/site";
 
 const TRUST = [
-  "One client engagement at a time — full focus",
-  "Same person scopes it, builds it, and explains it",
+  "Hosted with strict boundaries — or air-gapped on your own hardware",
+  "Built to run in production, explained in plain language",
   "KVK-registered, Netherlands · operating from Porto",
 ];
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-8">
+    <section
+      id="contact"
+      className="relative overflow-hidden border-t border-foreground/10 py-8"
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="absolute left-1/2 top-1/3 h-[26rem] w-[36rem] -translate-x-1/2 rounded-full bg-amber-500/[.06] blur-[130px]"
+          style={{ animation: "bento-aurora-a 30s ease-in-out infinite" }}
+        />
+      </div>
+
       <SectionRule label="CONTACT" align="left" />
 
-      <div className="mx-auto grid max-w-5xl gap-10 px-6 pb-20 md:grid-cols-2">
+      <div className="mx-auto grid max-w-5xl gap-10 px-6 pb-24 md:grid-cols-2">
         <FadeIn>
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Have a hard problem?
+            Have a hard problem worth solving?
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-            The fastest way to find out if I can help is a short call. No pitch
+            The fastest way to find out if we can help is a short call. No pitch
             deck, no obligation — just a conversation about what you&apos;re
-            trying to build.
+            trying to do.
           </p>
           <ul className="mt-8 space-y-3">
             {TRUST.map((t) => (
@@ -34,7 +44,7 @@ export default function Contact() {
               >
                 <Check
                   size={18}
-                  className="mt-0.5 shrink-0 text-amber-600 dark:text-amber-500"
+                  className="mt-0.5 shrink-0 text-amber-500"
                 />
                 {t}
               </li>
@@ -73,10 +83,10 @@ export default function Contact() {
 
             {/* TODO(placeholder): CONTACT_EMAIL — set real address in lib/site.ts */}
             <a
-              href={mailto("AES AI Solutions — project enquiry")}
+              href={mailto("AES AI Solutions — enquiry")}
               className="flex h-10 items-center justify-center rounded-xl border border-border bg-surface-secondary text-sm font-medium text-muted-foreground transition-colors hover:text-foreground dark:bg-white/5 dark:hover:bg-white/10"
             >
-              Email me directly
+              Email us directly
             </a>
 
             <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-widest text-muted-foreground">

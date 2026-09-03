@@ -7,13 +7,6 @@ import "./globals.css";
 import LenisProvider from "@/components/lenis-provider";
 import Header from "@/components/header";
 import { cn } from "@/lib/utils";
-import {
-  GITHUB_URL,
-  KVK_NUMBER,
-  LINKEDIN_URL,
-  SITE_DOMAIN,
-  mailto,
-} from "@/lib/site";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -28,9 +21,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AES AI Solutions — Hard AI systems, built by one person",
+  title: "AES AI Solutions — Hard problems, quietly solved",
   description:
-    "Compliance RAG, OSINT platforms, and production LLM tooling — designed, built, and shipped by one person who's done it before.",
+    "AES builds AI tools for compliance, security, and complex work — built to run in production, explained in plain language, and yours to control.",
 };
 
 // Force dark mode always
@@ -59,30 +52,16 @@ export default function RootLayout({
           <Header />
           <main id="top">{children}</main>
           <footer className="border-t border-white/[.08] py-10">
-            <div className="mx-auto flex max-w-5xl flex-col gap-3 px-6 font-mono text-xs text-slatey-400 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mx-auto max-w-5xl px-6 font-mono text-xs text-slatey-400">
               <p>
-                {/* TODO(placeholder): KVK_NUMBER — set real number in lib/site.ts */}
-                AES AI Solutions · KVK {KVK_NUMBER} · {SITE_DOMAIN}
+                AES AI Solutions · KVK-registered, Netherlands · operating from
+                Porto
               </p>
-              <div className="flex items-center gap-4">
-                {/* TODO(placeholder): LINKEDIN_URL / GITHUB_URL / CONTACT_EMAIL — set in lib/site.ts */}
-                <a href={LINKEDIN_URL} className="transition-colors hover:text-foreground">
-                  LinkedIn
-                </a>
-                <a href={GITHUB_URL} className="transition-colors hover:text-foreground">
-                  GitHub
-                </a>
-                <a
-                  href={mailto("AES AI Solutions — enquiry")}
-                  className="transition-colors hover:text-foreground"
-                >
-                  Email
-                </a>
-              </div>
+              <p className="mt-2 text-slatey-500">Your data stays yours.</p>
+              <p className="mt-4 text-slatey-500">
+                © {new Date().getFullYear()} AES AI Solutions
+              </p>
             </div>
-            <p className="mx-auto mt-6 max-w-5xl px-6 font-mono text-xs text-slatey-400">
-              © {new Date().getFullYear()} AES AI Solutions
-            </p>
           </footer>
         </LenisProvider>
       </body>
